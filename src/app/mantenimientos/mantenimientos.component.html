@@ -1,0 +1,68 @@
+<div id=title   style="width: 20;">
+  <h4>Ingresar Mantenimiento</h4></div>
+  <div *ngIf="alertnook" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> {{mensaje}}.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div *ngIf="alertok" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>OK!</strong> {{mensaje}}.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div>
+    <td>
+      <form [formGroup]="form" (ngSubmit)='save($event)' >
+        <table>
+          <tbody>
+            <tr>
+              <td class="tdRight">
+                <strong>Estado</strong>
+              </td>
+              <div>
+                <select class="input-group mb-3 input-group-text" aria-label="Default select example" formControlName="estado">
+                  <option *ngFor="let estado of estados" [value]="estado.id">
+                    {{estado.name}}</option>
+                </select>
+              </div>
+
+            </tr>
+            <tr>
+              <td class="tdRight">
+                <strong>Placa</strong>
+              </td>
+              <div>
+                <select class="input-group mb-3 input-group-text" aria-label="Default select example" formControlName="placa">
+                  <option *ngFor="let placa of placas" [value]="placa.name">
+                    {{placa.name}}</option>
+                </select>
+              </div>
+            </tr>
+          <tr>
+            <td class="tdRight">
+              <strong>Mecanico</strong>
+            </td>
+              <div>
+                <select class="input-group mb-3 input-group-text" formControlName="mecanico" >
+                  <option *ngFor="let nombre of nombres" [value]="nombre.documento">
+                    {{nombre.nombre}}</option>
+                </select>
+              </div>
+            </tr>
+            <div class="button">
+              <button type="submit"  class="newButton"
+                    >Guardar</button>
+             
+        </div>
+              </tbody>
+
+        </table>
+
+    </form>
+    </td>
+    
+  </div>
+  

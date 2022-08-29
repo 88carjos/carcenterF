@@ -1,0 +1,30 @@
+.alertRequired {
+    padding: 0;
+    margin-bottom: 1px;
+    padding-left: 7px;
+}
+
+.tdRight
+{
+    text-align: right;
+    margin-right: 5px;
+    width: 200px;
+}
+
+#formulario{
+    margin: 0;
+    margin-top:100px;
+  }
+
+#title{
+    margin:  auto;
+    margin-left: 425px;
+
+
+  }
+
+#mensaje{
+  margin:  auto;
+  margin-left: 25px;
+}
+

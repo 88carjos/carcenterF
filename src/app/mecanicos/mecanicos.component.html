@@ -1,0 +1,139 @@
+<div id=title   style="width: 20;">
+  <br>
+  <h4>Ingresar Mecanicos</h4>
+</div>
+<div *ngIf="alertnook" class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error!</strong> {{mensaje}}.
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="alertok" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>OK!</strong> {{mensaje}}.
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div>
+  <br>
+  <div id=title>
+    <h6 >Por favor diligencie los datos correctamente para ingresar el mecanico</h6><br>
+  </div>
+  <td>
+    <form id=title [formGroup]="form" (ngSubmit)='save($event)'>
+      <table>
+        <tbody style="display: inherit;">
+          <tr>
+            <td class="tdRight">
+              <strong>Tipo de Documento</strong>
+            </td>
+            <div>
+              <select class="input-group mb-3 input-group-text" aria-label="Default select example" formControlName="tipoDocumento">
+                <option *ngFor="let tipoDocument of tipoDocumento" [value]="tipoDocument.name">
+                  {{tipoDocument.name}}</option>
+              </select>
+            </div>
+            <td class="tdRight">
+              <strong>Documento</strong>
+            </td>
+            <div>
+              <p class="danger" *ngIf="form.get('documento').errors && form.get('documento').touched">
+                el documento no es valido
+              </p>
+              <input type="text" class="input-group mb-3 input-group-text" formControlName="documento" id="documento" />
+
+            </div>
+          </tr>
+          <tr>
+            <td class="tdRight">
+              <strong>Primer Nombre(*)</strong>
+            </td>
+            <div>
+              <p class="danger" *ngIf="form.get('primernombre').errors && form.get('primernombre').touched">
+                el primernombre no es valido
+              </p>
+              <input type="text" class="input-group mb-3 input-group-text" formControlName="primernombre" id="primernombre" />
+            </div>
+            <td class="tdRight">
+              <strong>Segundo Nombre</strong>
+            </td>
+            <div>
+              <p class="danger" *ngIf="form.get('segundonombre').errors && form.get('segundonombre').touched">
+                el segundoapellido no es valido
+              </p>
+              <input type="text" class="input-group mb-3 input-group-text" formControlName="segundonombre" id="segundonombre" />
+            </div>
+          </tr>
+          <tr>
+            <td class="tdRight">
+              <strong>Primer Apellido(*)</strong>
+            </td>
+            <div>
+              <p class="danger" *ngIf="form.get('primerapellido').errors && form.get('primerapellido').touched">
+                el primerapellido no es valido
+              </p>
+              <input type="text" class="input-group mb-3 input-group-text" formControlName="primerapellido" id="primerapellido" />
+            </div>
+            <td class="tdRight">
+              <strong>Segundo Apellido</strong>
+            </td>
+            <div>
+              <p class="danger" *ngIf="form.get('segundoapellido').errors && form.get('segundoapellido').touched">
+                el segundoapellido no es valido
+              </p>
+              <input type="text" class="input-group mb-3 input-group-text" formControlName="segundoapellido" id="segundoapeelido" />
+            </div>
+          </tr>
+          <tr>
+            <td class="tdRight">
+              <strong>Celular(*)</strong>
+            </td>
+            <div>
+              <p class="danger" *ngIf="form.get('celular').errors && form.get('celular').touched">
+                el númer de celular no es valido
+              </p>
+              <input type="text" class="input-group mb-3 input-group-text" formControlName="celular" id="celular" />
+            </div>
+            <td class="tdRight">
+              <strong>Direccion(*)</strong>
+            </td>
+            <div>
+              <p class="danger" *ngIf="form.get('direccion').errors && form.get('direccion').touched">
+                la direccion no puede estar vacia
+              </p>
+              <input type="text" class="input-group mb-3 input-group-text" formControlName="direccion" id="direccion" />
+            </div>
+          </tr>
+          <tr>
+            <td class="tdRight">
+              <strong>Email(*)</strong>
+            </td>
+            <div class="input-group mb-3">
+              <p class="danger" *ngIf="form.get('email').errors && form.get('email').touched">
+                el email no es valido
+              </p>
+              <input type="text" formControlName="email" id="email"  class="input-group mb-3 input-group-text">
+            </div>
+            <td class="tdRight">
+              <strong>Estado(*)</strong>
+            </td>
+            <div>
+              <select class="input-group mb-3 input-group-text" formControlName="estado" >
+                <option *ngFor="let est of estado" [value]="est.name">
+                  {{est.name}}</option>
+              </select>
+            </div>
+          </tr>
+          <div *ngIf="form.valid" class="button">
+            <button type="submit" class="newButton">Crear</button>
+          
+          </div>
+        
+            </tbody>
+      </table>
+      
+  </form>
+  </td>
+  
+</div>
+    

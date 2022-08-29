@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+.form-control:not(.form-control-bright) {
+    background-color: #31373c!important;
+    border-color: #5c5c5c!important;
+    color: #FFFFFF!important;
+  }
+  
+
+  .tdRight
+{
+    text-align: right;
+    margin-right: 5px;
+    width: 200px;
+}
+
+#formulario{
+    margin: 0;
+    margin-top:100px;
+  }
+
+#title{
+    margin:  auto;
+    margin-left: 425px;
+
+
+  }
+
+  .newButton
+  {
+       font-family: inherit;
+       background-color: #113250;
+           border: none;
+      color: white;
+      padding: 8px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      margin-left: -355;
+      width: 100px;
+  }  
+
+  .danger{
+    color: #FF0000;
+    margin: 0;
+    padding: 0;
+
+  }
